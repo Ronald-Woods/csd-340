@@ -1,0 +1,38 @@
+/*CSS for the index.html file*/
+
+/*Importing Google Fonts*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Styling the container */
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* Styling the headings */
+h1, h2, h3, h4 {
+    background-color: #003366; /* Dark blue background */
+    color: #FFFFFF; /* White text for contrast */
+    border: 1px solid #D6A800; /* Yellow border */
+    padding: 10px;
+}
+
+/* Styling anchor links */
+a {
+    color: #D6A800; /* Yellow text */
+    text-decoration: none;
+}
+
+/* Anchor link hover effect */
+a:hover {
+    color: #f3d054; /* Lighter yellow */
+}
+
+/* Anchor link visited state */
+a:visited {
+    color: #a38107; /* Darker yellow */
+}
