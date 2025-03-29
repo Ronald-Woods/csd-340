@@ -1,0 +1,77 @@
+/* Center the h1 title */
+h1 {
+    text-align: center;
+}
+
+/* Main container */
+#container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Side-by-side divs */
+.side-by-side {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side-by-side div {
+    width: 45%;
+}
+
+/* Styling for h3 tags */
+h3 {
+    font-weight: 500;
+}
+
+/* Styling for lists */
+ol, ul {
+    padding: 10px;
+    list-style-position: inside;
+}
+
+/* Ordered list (Top 10 Books) */
+.ordered-list-container {
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+ol {
+    font-weight: 300;
+}
+
+/* Unordered list (5 Things Learned) */
+.unordered-list-container {
+    border: 1px dashed red;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+ul {
+    font-weight: 300;
+    list-style: upper-roman;
+}
+
+/* Full-width div */
+.full-width {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 20px;  
+    clear: both; 
+}
+
+/* Link hover effect */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
