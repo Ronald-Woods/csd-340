@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="Introduction page by Ronald Woods for CSD 340 assignment."/>
+    <meta name="author" content="Ronald Woods"/>
+    <meta name="robots" content="nofollow"/>
+	<meta http-equiv="pragma" content="no-cache"/>
+	
+	<title>CSD 340 Web Development with HTML and CSS</title>
+    <link rel="stylesheet" href="Woods_Mod9_3.css">
+    <script>
+        // Declare word variables
+        let word1 = "languages";
+        let word2 = "websites";
+        let word3 = "JavaScript";
+        let word4 = "blanks";
+
+        // Functions to replace span content
+        function fillword1() {
+            document.getElementById("word1").textContent = word1;
+        }
+
+        function fillword2() {
+            document.getElementById("word2").textContent = word2;
+        }
+
+        function fillword3() {
+            document.getElementById("word3").textContent = word3;
+        }
+
+        function fillword4() {
+            document.getElementById("word4").textContent = word4;
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Assignment 9.3 : JavaScript - Part 1</h1>
+        <h2>Short Story, first take. </h2>
+        <p class="intro">Once upon a time, there was a student who was learning web development. He was excited to learn all of the different <span id="word1">_______</span> that would help him build amazing web pages.</p>
+        <p>He practiced multiple times a week and build super cool <span id="word2">________ </span> with HTML and CSS.</p>
+        <p>One day, he was tasked to learn <span id="word3">________</span>. He was amazed at how powerful it was and how it could make his web pages interactive.</p>
+        <p>He started by creating a web page that filled in <span id="word4">________</span> with the click of a button!</p>
+        <button onclick="fillword1()">Click to fill in the first word</button>
+        <button onclick="fillword2()">Click to fill in the second word</button>
+        <button onclick="fillword3()">Click to fill in the third word</button>
+        <button onclick="fillword4()">Click to fill in the fourth word</button>
+    </div>
+    
+    
+</body>
+<address>
+    <p><a href="https://www.bellevue.edu">Bellevue University</a></p>
+    <p>1000 Galvin Road South</p>
+    <p>Bellevue, NE 68005</p>
+</address>
