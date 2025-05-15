@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <script>
+    function displayImage(imageFile) {
+      var mainImage = document.getElementById("mainImage");
+      var newImage = document.createElement("img");
+      newImage.id = "mainImage";
+      newImage.src = imageFile;
+      newImage.alt = "Main Display Image";
+      newImage.className = "mainImage";
+      newImage.style.width = "300px";
+      newImage.style.height = "200px";
+      mainImage.parentNode.replaceChild(newImage, mainImage);
+    }
+  </script>
+<link rel="stylesheet" type="text/css" href="Woods_Mod10_3.css">
+
+</head>
+<body>
+  <h1>Assignment 10.3: JavaScript - Part 2</h1>
+
+  <!-- Main image display -->
+  <div>
+    <img id="mainImage" src="papasmurf.jpg" alt="Default Image" class="mainImage" style="width:300px; height:200px;">
+  </div>
+
+  <!-- Thumbnails -->
+  <div>
+    <p>Click a character to change the main image:</p>
+    <img src="papasmurf.jpg" alt="Papa Smurf" onclick="displayImage('papasmurf.jpg')" style="width:100px; height:75px; cursor:pointer; margin: 5px;">
+    <img src="smurfette.jpg" alt="Smurfette" onclick="displayImage('smurfette.jpg')" style="width:100px; height:75px; cursor:pointer; margin: 5px;">
+    <img src="badguyfromsmurfs.jpg" alt="Gargamel" onclick="displayImage('badguyfromsmurfs.jpg')" style="width:100px; height:75px; cursor:pointer; margin: 5px;">
+  </div>
+</body>
+</html>
