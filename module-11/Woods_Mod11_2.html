@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e8f0f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #004d66;
+    }
+
+    .todo-container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 60%;
+      font-size: 1em;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .button-group {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 1em;
+      margin-right: 10px;
+      background-color: #007c91;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #005f6b;
+    }
+
+    #output {
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-left: 5px solid #007c91;
+      border-radius: 6px;
+    }
+
+    .todo-item {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      background-color: #004d66;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    footer a {
+      color: #a6e3f3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+ <main>
+  <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+  <p style="max-width: 600px; margin-bottom: 30px; color: #444;">
+    Welcome to my interactive to-do list! Simply enter what you need to do in the text box below, 
+    and click "Add" to add it to the list. You can delete the last entry, and then display the list to see all your to-dos. 
+    Have a great day! 
+  </p>
+
+  <div class="todo-container">
+    <input type="text" id="textBox" placeholder="Enter a to-do item">
+    <div class="button-group">
+      <button onclick="addItem()">Add</button>
+      <button onclick="deleteLastItem()">Delete Last Entry</button>
+      <button onclick="displayItems()">Display</button>
+    </div>
+    <div id="output">Your to-do list will appear here.</div>
+  </div>
+</main>
+
+
+  <footer>
+    <p><a href="/index.html">← Back to Home</a></p>
+  </footer>
+
+  <script>
+    const todoList = [];
+
+    function addItem() {
+      const input = document.getElementById('textBox').value.trim();
+      if (input) {
+        todoList.push(input);
+        alert(`"${input}" was added at index ${todoList.length - 1}`);
+        document.getElementById('textBox').value = '';
+        displayItems();
+      } else {
+        alert("Please enter a to-do item.");
+      }
+    }
+
+    function deleteLastItem() {
+      if (todoList.length > 0) {
+        const removedItem = todoList.pop();
+        alert(`"${removedItem}" was removed from the list.`);
+        displayItems();
+      } else {
+        alert("Your to-do list is already empty.");
+      }
+    }
+
+    function displayItems() {
+      const output = document.getElementById('output');
+      if (todoList.length === 0) {
+        output.innerHTML = "Your to-do list is empty.";
+        return;
+      }
+
+      output.innerHTML = todoList.map((item, index) => 
+        `<div class="todo-item">${index + 1}. ${item}</div>`
+      ).join('');
+    }
+  </script>
+
+</body>
+</html>
