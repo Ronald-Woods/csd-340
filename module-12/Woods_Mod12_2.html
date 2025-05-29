@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <link rel="stylesheet" href="Woods_Mod12_2.css">
+</head>
+
+<body>
+  <div id="container">
+    <h1>Assignment 12.2: JavaScript - Part 4</h1>
+
+    <div class="ordered-list-container">
+      <h3>Sorted Book List</h3>
+      <button onclick="displayTopToBottom()">Top to Bottom</button>
+      <button onclick="displayBottomToTop()">Bottom to Top</button>
+      <ul id="bookList"></ul>
+    </div>
+
+    <div class="unordered-list-container">
+      <h3>5 Things I’ve Learned Since the Course Started</h3>
+      <ul>
+        <li>How to create ordered lists.</li>
+        <li>How to use CSS to change fonts.</li>
+        <li>How to enter horizontal line breaks.</li>
+        <li>How to enter special characters that you can't normally type.</li>
+        <li>GitHub!</li>
+      </ul>
+    </div>
+
+    <div class="full-width">
+      <a href="../index.html">Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    const books = [
+      "Stephen King - The Dark Tower Series",
+      "The Lord of the Rings Trilogy",
+      "The Hobbit",
+      "1984",
+      "Stephen King - The Stand",
+      "Stephen King - The Shining",
+      "Stephen King - The Talisman",
+      "Stephen King - It",
+      "Joe Hill - NOS4A2",
+      "Thomas Harris - The Silence of the Lambs"
+    ];
+
+    function displayTopToBottom() {
+      const list = document.getElementById("bookList");
+      list.innerHTML = "";
+      const sorted = [...books].sort();
+      sorted.forEach(book => {
+        const li = document.createElement("li");
+        li.textContent = book;
+        list.appendChild(li);
+      });
+    }
+
+    function displayBottomToTop() {
+      const list = document.getElementById("bookList");
+      list.innerHTML = "";
+      const sorted = [...books].sort().reverse();
+      sorted.forEach(book => {
+        const li = document.createElement("li");
+        li.textContent = book;
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
